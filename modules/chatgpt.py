@@ -51,12 +51,8 @@ class ChatGPT(commands.Cog):
         ):
             if data["message"] != "":
                 response: str = data["message"]
-                if "```" in response:
-                    pos = response.find("```") + 3
-                    response = response[:pos] + guess.language_name(response[pos:]) + response[pos:]
-                    if response.count("```") == 1:
-                        response += "```"
-
+                if response.count("```") % 2 != 0:
+                    response += "```"
                 await interaction.edit_original_response(response)
 
 
