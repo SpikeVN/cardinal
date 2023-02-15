@@ -70,6 +70,8 @@ LOGGING_MAP = {
 
 
 def save_log():
+    if "logs" not in os.listdir():
+        os.mkdir("logs")
     with open(LOGFILE, "w") as f:
         f.write("\n".join(LOG))
 
