@@ -42,7 +42,6 @@ class ChatGPT(commands.Cog):
         )
     ):
         await interaction.response.defer(ephemeral=private)
-        guess = Guess()
         for data in CHATGPT_BOT.ask(
             prompt,
             conversation_id=CHATGPT_BOT.config.get("conversation"),
