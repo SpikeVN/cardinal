@@ -20,7 +20,7 @@ import i18n
 import logger
 
 bot = commands.Bot(
-    "!c", intents=disnake.Intents.all(), test_guilds=[994065211919171725]
+    "!c", intents=disnake.Intents.all()
 )
 
 
