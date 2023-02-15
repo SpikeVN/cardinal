@@ -18,6 +18,7 @@ import logger
 
 from disnake.ext import commands
 from revChatGPT.V1 import Chatbot
+from guesslang import Guess
 
 import cfgman
 
@@ -42,14 +43,21 @@ class ChatGPT(commands.Cog):
         )
     ):
         await interaction.response.defer(ephemeral=private)
-
+        guess = Guess()
         for data in CHATGPT_BOT.ask(
             prompt,
             conversation_id=CHATGPT_BOT.config.get("conversation"),
             parent_id=CHATGPT_BOT.config.get("parent_id"),
         ):
             if data["message"] != "":
-                await interaction.edit_original_response(data["message"])
+                response: str = data["message"]
+                if "```" in response:
+                    pos = response.find("```") + 3
+                    response = response[:pos] + guess.language_name(response[pos:]) + response[pos:]
+                    if response.count("```") == 1:
+                        response += "```"
+
+                await interaction.edit_original_response(response)
 
 
 def setup(bot):

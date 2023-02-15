@@ -36,6 +36,7 @@ config:
         enabled: True
     # Reduce clogging by allowing the bot to delete its messages.
     antiClog:
+      enabled: True
       # The emoji which will be used to vote to delete the message.
       emoji: 🚮
       # The threshold at which the message will be removed, when the
