@@ -2,4 +2,3 @@ disnake[voice]
 pyyaml
 pyrebase4
 revChatGPT
-guesslang

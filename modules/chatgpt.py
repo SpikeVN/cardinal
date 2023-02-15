@@ -18,7 +18,6 @@ import logger
 
 from disnake.ext import commands
 from revChatGPT.V1 import Chatbot
-from guesslang import Guess
 
 import cfgman
 
