@@ -1,0 +1,9 @@
+logs/
+.vscode/
+.idea/
+*.pyc
+*.pyd
+__pycache__/
+venv/
+database.json
+pyrebase

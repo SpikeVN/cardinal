@@ -1,0 +1,157 @@
+{
+  "test": "This is a test message. Replace this with LANGNAME_OK.",
+  "boilerplate": {
+    "invalidArgument": "the argument given is invalid",
+    "argumentType": {
+      "int": "int type",
+      "str": "string type",
+      "choice": "choice type",
+      "bool": "boolean type",
+      "timeStr": "time string"
+    },
+    "anonymous": "anonymous user",
+    "noReason": "without any reason",
+    "success": [
+      "text",
+      "indicating success"
+    ],
+    "failure": [
+      "text",
+      "indicating failure"
+    ],
+    "cancelled": [
+      "text",
+      "indicating cancellation"
+    ],
+    "confirmCancel": [
+      [
+        "formal confirm",
+        "formal cancel"
+      ],
+      [
+        "variate yes",
+        "variate no"
+      ]
+    ]
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "localized description of the /ban command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "localized description of the /unban command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "localized description of the /kick command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "localized description of the /isolate command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "duration": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "localized description of the /warn command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "prompt": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "chatgpt": {
+      "commandDescription": "localized description of the /chatgpt command.",
+      "argumentDescription": {
+        "prompt": "localized argument description",
+        "private": "localized argument description"
+      }
+    }
+  }
+}

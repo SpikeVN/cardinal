@@ -1,0 +1,56 @@
+# Cardinal configuration.
+# Configuration can be set in this file, or set as environment variables.
+# Environment variables will override the value set in this file.
+config:
+  # General settings.
+  general:
+    # The bots token. It is recommended to set it as environment
+    # variables, as uploading the bots source code may cause a token leak.
+    # Options available: None, <token>
+    token: None
+    # The bots language.
+    language: vi
+    # The bots prefix. This will not be used as the bot uses slash commands.
+    prefix: "!c"
+    # The bots Activity.
+    activity: Alfheim Online
+
+  # Terminal output configuration.
+  # Log entries will also be written in log files.
+  logging:
+    # The lowest level the bot can print out logs. Debug is very verbose,
+    # use it only when debugging.
+    # Options available: None, debug, success, info, warning, error,
+    level: info
+
+  # Settings related to individual modules.
+  modules:
+    # Moderation operation, including the /ban command, the anti-spam and
+    # anti-raid system, the report system.
+    moderation:
+      # Master enable. This have to be enabled in order for all the
+      # moderation module to work.
+      enabled: True
+      # Command-related configuration (will be overriden by the master config.)
+      modCommands:
+        enabled: True
+    # Reduce clogging by allowing the bot to delete its messages.
+    antiClog:
+      # The emoji which will be used to vote to delete the message.
+      emoji: 🚮
+      # The threshold at which the message will be removed, when the
+      # votes (excluding votes from bots) is greater or equals
+      # this number.
+      threshold: 3
+
+
+  # The bot backend
+  # Token and API keys for the bot internal workings. It is advised to put
+  # this as environment variable, for the same reason as general.token
+  backend:
+    firebase:
+      dbURL: None
+      apiKey: None
+    openai:
+      email: None
+      password: None

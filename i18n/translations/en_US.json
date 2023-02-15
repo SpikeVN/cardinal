@@ -1,0 +1,202 @@
+{
+  "test": "en_US_OK",
+  "boilerplate": {
+    "invalidArgument": "You gave invalid argument: `{arg_name} = {inp}` *(expected a `{arg_type}` value)*.",
+    "argumentType": {
+      "int": "integer",
+      "str": "string literal",
+      "choice": "choice",
+      "bool": "true/false",
+      "timeStr": "time string"
+    },
+    "anonymous": "anonymous",
+    "noReason": "no reason",
+    "success": [
+      "Operation succeeded",
+      "OK",
+      "Task completed successfully"
+    ],
+    "failure": [
+      "Encountered failure",
+      "Failed",
+      "Task completion failed"
+    ],
+    "cancelled": [
+      "Cancelling operation succeeded",
+      "Cancelled",
+      "Cancelled task successfully"
+    ],
+    "confirmCancel": [
+      [
+        "Confirm",
+        "Cancel"
+      ],
+      [
+        "I hereby confirm my decision",
+        "Invalidate the decision"
+      ],
+      [
+        "OK",
+        "Cancel"
+      ],
+      [
+        "Yes",
+        "Back out"
+      ],
+      [
+        "Yea",
+        "Nay"
+      ],
+      [
+        "Yeah",
+        "Nope"
+      ]
+    ]
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "Bans an user.",
+      "argumentDescription": {
+        "user": "The user you want to ban.",
+        "reason": "The reason why you want to ban that user.",
+        "quiet": "Send the announcement (the affected user would still receive the DM).",
+        "anonymous": "Whether you want your username shown in the announcement."
+      },
+      "confirmationPrompt": [
+        "Please confirm your decision to ban {user}.",
+        "Are you sure you want to ban {user}?",
+        "Do you really want {user} to disappear and never return to this server? (they will be very sad)",
+        "Banning {user}?",
+        "Really? Ban {user}?",
+        "Please give confirmation that you want to ban {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} have been banned by {admin}, because `{reason}`.",
+          "{admin} banned {user} for `{reason}`.",
+          "{user} have been struck by {admin}'s ban hammer, for `{reason}`."
+        ],
+        "private": [
+          "You have been banned by {admin} for `{reason}`. From now you will not be able to participate in conversations in that server anymore. You may request a pardon or reconsideration from the moderators by typing in this DM should you find their decision faulty.",
+          "{admin} has prevented you from participating in their server by banning you for `{reason}`. A pardon or reconsideration may be requested by messaging in this DM should you find their decision faulty.",
+          "{admin} decided to ban you for `{reason}`. You can no longer participate in their server. Pardon or reconsideration is available by messaging in this DM should you find their decision faulty."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "Unbans an user.",
+      "argumentDescription": {
+        "user": "The user you want to unban.",
+        "reason": "The reason why you want to unban that user.",
+        "quiet": "Send the announcement (the affected user would still receive the DM).",
+        "anonymous": "Whether you want your username shown in the announcement."
+      },
+      "confirmationPrompt": [
+        "Please confirm your decision to unban {user}.",
+        "Are you sure you want to unban {user}?",
+        "Do you really want to allow {user} to be able to return to the server? (they might raid the server)",
+        "Unbanning {user}?",
+        "Really? Unban {user}?",
+        "Please give confirmation that you want to unban {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} have been unbanned by {admin}, because `{reason}`.",
+          "{admin} unbanned {user} for `{reason}`.",
+          "{user} have been pardoned by {admin}, for `{reason}`."
+        ],
+        "private": [
+          "You have been unbanned by {admin} for `{reason}`. You may participate in the server now.",
+          "{admin} has allowed you to participating in their server by unbanning you for `{reason}`. Now you can message in the server.",
+          "{admin} decided to pardon you for `{reason}`. You can now participate in the server."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "Kicks an user.",
+      "argumentDescription": {
+        "user": "The user you want to kick.",
+        "reason": "The reason why you want to kick that user.",
+        "quiet": "Send the announcement (the affected user would still receive the DM).",
+        "anonymous": "Whether you want your username shown in the announcement."
+      },
+      "confirmationPrompt": [
+        "Please confirm your decision to kick {user}.",
+        "Are you sure you want to kick {user} out of the server?",
+        "Do you really want {user} to disappear from this server? (they might return if they wanted)",
+        "Kicking {user} from the server?",
+        "Really? Kick {user}?",
+        "Please give confirmation that you want to kick {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} have been kicked by {admin}, because `{reason}`.",
+          "{admin} kicked {user} for `{reason}`.",
+          "{user} have been hit by {admin}'s foot, flying out of the server, for `{reason}`."
+        ],
+        "private": [
+          "You have been kicked by {admin} for `{reason}`.",
+          "{admin} has prevented you from participating in their server by kicking you for `{reason}`",
+          "{admin} decided to kick you for `{reason}`."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "Isolates an user.",
+      "argumentDescription": {
+        "user": "The user you want to isolate that user.",
+        "reason": "The reason why you want to ban isolate user.",
+        "duration": "The duration you want to isolate that user.",
+        "quiet": "Send the announcement (the affected user would still receive the DM).",
+        "anonymous": "Whether you want your username shown in the announcement."
+      },
+      "confirmationPrompt": [
+        "Please confirm your decision to isolate {user}.",
+        "Are you sure you want to isolate {user}?",
+        "Do you really want {user} shut up? (they won't be able to say or interact with anything, including reacting)",
+        "Isolating {user}?",
+        "Really? Isolate {user}?",
+        "Please give confirmation that you want to isolate {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} have been isolated by {admin}, because `{reason}`. They will return after {duration}.",
+          "{admin} isolated {user} for `{reason}`. After {duration}, they may talk again.",
+          "{user} have been struck by {admin}'s isolating crew, for `{reason}`. They will be released after {duration}"
+        ],
+        "private": [
+          "You have been isolated by {admin} for `{reason}`. You will not be able to participate in conversations in that server until {duration}. You may request a pardon or duration shortening from the moderators by typing in this DM should you find their decision faulty.",
+          "{admin} has prevented you from participating in their server by isolating you for `{reason}`. You will not be able to participate in conversations in that server until {duration}. A pardon or duration shortening may be requested by messaging in this DM should you find their decision faulty.",
+          "{admin} decided to isolate you for `{reason}`. You cannot participate in their server until {duration}. Pardon or duration shortening is available by messaging in this DM should you find their decision faulty."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "Warns an user.",
+      "argumentDescription": {
+        "user": "The user you want to warn.",
+        "prompt": "The warning content.",
+        "anonymous": "Whether you want your username shown in the announcement."
+      },
+      "actionPrompt": {
+        "public": [
+          "{user} have been warned by {admin}, because `{reason}`.",
+          "{admin} warned {user} for `{reason}`.",
+          "{user} have been struck by {admin}'s warn hammer, for `{reason}`."
+        ],
+        "private": [
+          "You have been warned by {admin} for `{reason}`. Please read the warning prompt carefully before continue chatting.",
+          "{admin} has warned you in their server by warning you for `{reason}`. Please read the prompt carefully.",
+          "{admin} decided to warn you for `{reason}`. We would like you to read the warning prompt carefully."
+        ]
+      }
+    },
+    "chatgpt": {
+      "commandDescription": "Answers your questions using ChatGPT by OpenAI.",
+      "argumentDescription": {
+        "prompt": "Your prompt for the AI.",
+        "private": "Whether to send your question and the AI response to the public chat."
+      }
+    }
+  }
+}
