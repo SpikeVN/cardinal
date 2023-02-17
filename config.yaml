@@ -21,7 +21,7 @@ config:
     # The lowest level the bot can print out logs. Debug is very verbose,
     # use it only when debugging.
     # Options available: None, debug, success, info, warning, error,
-    level: info
+    level: debug
 
   # Settings related to individual modules.
   modules:

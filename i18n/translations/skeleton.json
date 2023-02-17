@@ -149,8 +149,33 @@
     "chatgpt": {
       "commandDescription": "localized description of the /chatgpt command.",
       "argumentDescription": {
-        "prompt": "localized argument description",
-        "private": "localized argument description"
+        "prompt": "localized argument description"
+      },
+      "card": {
+        "title": "ChatGPT output card title",
+        "titleComplete": "ChatGPT output card title when ",
+        "prompt": "text indicating the information below it is the input prompt",
+        "answer": "text indicating the information below it is the AI answer"
+      },
+      "stopGeneration": "text on the stop generating button",
+      "error": {
+        "noResponse": "error when OpenAI server didnt response to bot request",
+        "outputCut": "when the AI output is cut in the middle by the stop button"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "localized description of the /shitpost command."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "localized description of the /shitpost cringe command.",
+      "argumentDescription": {
+        "prompt": "localized argument description"
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "localized description of the /shitpost emoji command.",
+      "argumentDescription": {
+        "prompt": "localized argument description"
       }
     }
   }

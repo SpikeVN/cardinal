@@ -194,8 +194,33 @@
     "chatgpt": {
       "commandDescription": "Trả lời câu hỏi của bạn bằng ChatGPT của OpenAI.",
       "argumentDescription": {
-        "prompt": "Yêu cầu của bạn",
-        "private": "Công khai câu hỏi của bạn và câu trả lời của AI lên chat chung"
+        "prompt": "Yêu cầu của bạn"
+      },
+      "card": {
+        "title": "ChatGPT - Đang trả lời...",
+        "titleComplete": "ChatGPT - Vấn đáp",
+        "prompt": "Yêu cầu",
+        "answer": "Trả lời"
+      },
+      "stopGeneration": "Dừng trả lời",
+      "error": {
+        "noResponse": "Lỗi: OpenAI không trả lời yêu cầu của bạn. Đây là không phải là lỗi của bot. Bạn có thể thử lại sau.",
+        "outputCut": "[dừng trả lời]"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "Tập hợp các công cụ để giúp một shitposter chuyên nghiệp hành nghề."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "Làm cho lời nói của bạn cringe bằng cách cố tình đánh vần sai.",
+      "argumentDescription": {
+        "prompt": "Đoạn văn cần làm cringe"
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "Chèn một đống emoji vào đoạn văn của bạn.",
+      "argumentDescription": {
+        "prompt": "Đoạn văn cần thêm emoji"
       }
     }
   }

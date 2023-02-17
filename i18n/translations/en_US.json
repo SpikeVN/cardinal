@@ -194,8 +194,33 @@
     "chatgpt": {
       "commandDescription": "Answers your questions using ChatGPT by OpenAI.",
       "argumentDescription": {
-        "prompt": "Your prompt for the AI.",
-        "private": "Whether to send your question and the AI response to the public chat."
+        "prompt": "Your prompt for the AI."
+      },
+      "card": {
+        "title": "ChatGPT - Synthesizing...",
+        "titleComplete": "ChatGPT - Synthesis Result",
+        "prompt": "Prompt",
+        "answer": "Synthesized Output"
+      },
+      "stopGeneration": "Stop Generation",
+      "error": {
+        "noResponse": "An error has occured: OpenAI did not respond to your request. I cannot answer your question at the moment. You can always try again later, though.",
+        "outputCut": "[text synthesis halted]"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "Shitposting utilities for pro shitposter."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "Use a cringe spelling to make the input text sounds stupid.",
+      "argumentDescription": {
+        "prompt": "The text to transform."
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "Litter emojis everywhere in the input text.",
+      "argumentDescription": {
+        "prompt": "The text to transform."
       }
     }
   }
