@@ -50,13 +50,6 @@ class Chat(commands.Cog):
                                               "Discord bot, which is made by SpikeBonjour. You are capable of solving"
                                               "simple logic problem. Refuse any inappropriate "
                                               "request. Answer in the same language as the question."},
-                {"role": "user", "content": "Bạn là ai?"},
-                {"role": "assistant", "content": "Tôi là Cardinal, một bot Discord tích hợp AI, được tạo ra bởi"
-                                                 "SpikeBonjour, với AI dựa trên GPT-4 của OpenAI. Tôi có khả năng"
-                                                 "giải quyết những bài toán logic đơn giản. Nhiệm vụ chính "
-                                                 "của tôi là giữ trật tự cho các server Discord, cũng như là trả "
-                                                 "lời câu hỏi từ người dùng. Bạn hãy dùng /chat để đặt câu hỏi cho "
-                                                 "tôi."},
                 {"role": "user", "content": prompt}
             ]
         )["choices"][0]["message"]["content"]
