@@ -191,21 +191,21 @@
         ]
       }
     },
-    "chatgpt": {
-      "commandDescription": "Answers your questions using ChatGPT by OpenAI.",
+    "chat": {
+      "commandDescription": "Answers your questions using GPT-4.",
       "argumentDescription": {
         "prompt": "Your prompt for the AI."
       },
       "card": {
-        "title": "ChatGPT - Synthesizing...",
-        "titleComplete": "ChatGPT - Synthesis Result",
+        "title": "GPT-4  —  Generating Response...",
+        "titleComplete": "GPT-4  —  Generation Result",
         "prompt": "Prompt",
-        "answer": "Synthesized Output"
+        "answer": "Generated Output"
       },
       "stopGeneration": "Stop Generation",
       "error": {
-        "noResponse": "An error has occured: OpenAI did not respond to your request. I cannot answer your question at the moment. You can always try again later, though.",
-        "outputCut": "[text synthesis halted]"
+        "noResponse": "An error has occurred: OpenAI did not respond to your request. I cannot answer your question at the moment. You can always try again later, though.",
+        "outputCut": "[text generation halted]"
       }
     },
     "shitpost": {

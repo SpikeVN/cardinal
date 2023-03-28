@@ -146,14 +146,14 @@
         ]
       }
     },
-    "chatgpt": {
-      "commandDescription": "localized description of the /chatgpt command.",
+    "chat": {
+      "commandDescription": "localized description of the /chat command.",
       "argumentDescription": {
         "prompt": "localized argument description"
       },
       "card": {
-        "title": "ChatGPT output card title",
-        "titleComplete": "ChatGPT output card title when ",
+        "title": "GPT-4 output card title",
+        "titleComplete": "GPT-4 output card title when ",
         "prompt": "text indicating the information below it is the input prompt",
         "answer": "text indicating the information below it is the AI answer"
       },

@@ -191,14 +191,14 @@
         ]
       }
     },
-    "chatgpt": {
-      "commandDescription": "Trả lời câu hỏi của bạn bằng ChatGPT của OpenAI.",
+    "chat": {
+      "commandDescription": "Trả lời câu hỏi của bạn bằng GPT-4 của OpenAI.",
       "argumentDescription": {
         "prompt": "Yêu cầu của bạn"
       },
       "card": {
-        "title": "ChatGPT - Đang trả lời...",
-        "titleComplete": "ChatGPT - Vấn đáp",
+        "title": "GPT-4  —  Đang trả lời...",
+        "titleComplete": "GPT-4  —  Hỏi đáp",
         "prompt": "Yêu cầu",
         "answer": "Trả lời"
       },

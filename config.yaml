@@ -8,7 +8,7 @@ config:
     # variables, as uploading the bots source code may cause a token leak.
     # Options available: None, <token>
     token: None
-    # The bots language.
+    # The bots' language.
     language: vi
     # The bots prefix. This will not be used as the bot uses slash commands.
     prefix: "!c"
@@ -53,5 +53,5 @@ config:
       dbURL: None
       apiKey: None
     openai:
-      email: None
-      password: None
+      org: None
+      apiKey: None
