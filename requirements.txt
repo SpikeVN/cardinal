@@ -16,7 +16,6 @@ gcloud==0.18.3
 googleapis-common-protos==1.59.1
 httplib2==0.22.0
 idna==3.4
-imgkit==1.2.3
 Jinja2==3.1.2
 jwcrypto==1.5.0
 MarkupSafe==2.1.3
