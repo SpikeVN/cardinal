@@ -21,12 +21,12 @@ from . import Locale
 def _same_struct(_d1: dict, _d2: dict) -> bool:
     if len(_d1.keys()) != len(_d2.keys()):
         logger.debug(
-            "Dissimillar length: ", _d1.keys(), "and", _d2.keys(), ", invalidating"
+            "Dissimilar length: ", _d1.keys(), "and", _d2.keys(), ", invalidating"
         )
         return False
     for k, v in _d1.items():
         if k not in _d2.keys():
-            logger.debug("Dissimillar key: ", k, "not in", _d2.keys(), ", invalidating")
+            logger.debug("Dissimilar key: ", k, "not in", _d2.keys(), ", invalidating")
             return False
         if isinstance(v, dict):
             if isinstance(_d2[k], dict):

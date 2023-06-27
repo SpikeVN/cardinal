@@ -84,6 +84,9 @@ def _log(filename: str, line: int, level: int, *message: str):
     time = f"{ct.hour}:{ct.minute}:{ct.second}"
     if level > __MIN_LEVEL:
         return
+
+    conv_message = [str(i) for i in message]
+
     print(
         security.safe_format(
             __FORMAT,
@@ -93,7 +96,8 @@ def _log(filename: str, line: int, level: int, *message: str):
             line=line,
             level=N2LV[str(level)],
         ),
-        *message,
+        *conv_message,
+        COLOR_RESET,
         sep="",
     )
     LOG.append(
@@ -105,7 +109,7 @@ def _log(filename: str, line: int, level: int, *message: str):
             line=line,
             level=N2LV[str(level)],
         )
-        + " ".join(str(message))
+        + " ".join(conv_message)
     )
     save_log()
 

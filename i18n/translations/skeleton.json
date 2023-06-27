@@ -177,6 +177,18 @@
       "argumentDescription": {
         "prompt": "localized argument description"
       }
+    },
+    "wfsolver": {
+      "commandDescription": "localized description of the /wf command.",
+      "argumentDescription": {
+        "query": "localized argument description",
+        "pos": "localized argument description",
+        "max": "localized argument description"
+      },
+      "card": {
+        "resultTitle": "lookup board result",
+        "research": "research further"
+      }
     }
   }
 }

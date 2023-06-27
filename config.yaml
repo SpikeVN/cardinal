@@ -21,7 +21,7 @@ config:
     # The lowest level the bot can print out logs. Debug is very verbose,
     # use it only when debugging.
     # Options available: None, debug, success, info, warning, error,
-    level: debug
+    level: info
 
   # Settings related to individual modules.
   modules:
@@ -52,6 +52,6 @@ config:
     firebase:
       dbURL: None
       apiKey: None
-    openai:
-      org: None
+    rapidapi:
       apiKey: None
+      chatHost: None

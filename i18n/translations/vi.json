@@ -222,6 +222,18 @@
       "argumentDescription": {
         "prompt": "Đoạn văn cần thêm emoji"
       }
+    },
+    "wfsolver": {
+      "commandDescription": "Đưa ra những đáp án khả thi cho những bài word form.",
+      "argumentDescription": {
+        "query": "Từ nguyên",
+        "pos": "Từ loại",
+        "max": "Giới hạn số từ cần tra"
+      },
+      "card": {
+        "resultTitle": "Kết quả tìm kiếm",
+        "research": "Tìm hiểu sâu hơn"
+      }
     }
   }
 }

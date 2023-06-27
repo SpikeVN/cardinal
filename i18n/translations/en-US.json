@@ -222,6 +222,18 @@
       "argumentDescription": {
         "prompt": "The text to transform."
       }
+    },
+    "wfsolver": {
+      "commandDescription": "Gives possible answers to word form exercises.",
+      "argumentDescription": {
+        "query": "The word to look up",
+        "pos": "The result's part of speech",
+        "max": "Maximum results to search"
+      },
+      "card": {
+        "resultTitle": "Word hunting result",
+        "research": "Investigate"
+      }
     }
   }
 }

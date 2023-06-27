@@ -37,7 +37,6 @@ def get(_i: str) -> any:
     :param _i: the configuration location identifier.
     :return: its value.
     """
-    logger.debug(f"accessing {_i} config entry.")
     if _i in os.environ:
         if (
             "password" in _i

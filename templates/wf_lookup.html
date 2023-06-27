@@ -1,0 +1,105 @@
+<!--
+  ~ Copyright (c) 2022-2023  SpikeBonjour
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Word</th>
+                <th>Part of Speech</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, (w, d) in words %}
+            <tr>
+                <td class="data centered">{{ i+1 }}</td>
+                <td>{{ w }}</td>
+                <td class="data centered">{{ d.allpos }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    th {
+        background-color: #585b70;
+        color: #cdd6f4;
+    }
+
+    tr:nth-child(even) {
+        background-color: #a6adc8 !important;
+    }
+
+    tr {
+        background-color: #cdd6f4;
+    }
+
+    table, th, td {
+        border-left: 1px solid #181825;
+        border-right: 1px solid #181825;
+        padding: 5px;
+        border-collapse: collapse;
+    }
+    th {
+        border-bottom: 1px solid #181825;
+    }
+
+
+    table {
+        border: 1px solid #181825;
+    }
+
+    .data {
+        font-family: "SF Mono", "JetBrains Mono", "Consolas", monospace;
+    }
+
+    .centered {
+        text-align: center;
+    }
+
+    body {
+        background-color: #fff;
+        color: black;
+        font-family: "Source Serif Pro", "Inter", "SF Pro Text", "Liberation Sans", sans-serif;
+    }
+
+    th, h3 {
+        font-family: "Inter", "SF Pro Text", "Liberation Sans", sans-serif;
+    }
+
+    p {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+</style>

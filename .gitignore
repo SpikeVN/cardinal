@@ -7,3 +7,5 @@ __pycache__/
 venv/
 database.json
 pyrebase
+resources
+/resources/

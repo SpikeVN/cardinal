@@ -32,7 +32,7 @@ class Locale(enum.Enum):
     """The supported language list."""
 
     VIETNAMESE: Language = Language("Tiếng Việt", "Vietnamese", "vi", disnake.Locale.vi)
-    ENGLISH: Language = Language("English", "English", "en_US", disnake.Locale.en_US)
+    ENGLISH: Language = Language("English", "English", "en-US", disnake.Locale.en_US)
     SKELETON: Language = Language(
         "skeleton lang", "skeleton_debug_language", "skeleton", None
     )

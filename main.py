@@ -54,6 +54,8 @@ def load_modules():
 def start():
     cfgman.init_config_hive()
     logger.set_min_level(cfgman.get("logging.level"))
+    if not os.path.exists("resources"):
+        os.mkdir("resources")
     logger.info("Loading localization data...")
     i18n.init_translation_database()
     i18n.check_structure(i18n.LOCALIZATION_DATA)
