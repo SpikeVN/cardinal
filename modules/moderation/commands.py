@@ -41,7 +41,7 @@ class Moderation(commands.Cog):
         admin: disnake.Member,
         user: disnake.User | disnake.Member,
         action_type: typing.Literal["ban", "unban", "kick", "isolate", "warn"],
-        action: typing.Coroutine,
+        action: typing.Coroutine = None,
         end_time: int = None,
         reason: str = None,
         quiet: bool = False,
@@ -80,7 +80,8 @@ class Moderation(commands.Cog):
                     else reason,
                 )
             )
-        await action
+        if action is not None:
+            await action
         _enumerate_telemetry(
             user,
             {
@@ -269,7 +270,6 @@ class Moderation(commands.Cog):
             admin=interaction.author,
             user=user,
             action_type="warn",
-            action=interaction.guild.ban(user),
             reason=prompt,
             quiet=False,
             anonymous=anonymous,

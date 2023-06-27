@@ -22,6 +22,8 @@ import i18n
 from jinja2 import Environment, FileSystemLoader
 from disnake.ext import commands
 
+import logger
+
 WEBSTER_WIKITONARY_MAP = {
     "n.": "noun",
     "v.": "verb",
@@ -78,7 +80,7 @@ class WFSolver(commands.Cog):
         potential = {}
         for (w, pos), ds in WORDS.items():
             if pos_search != "*":
-                if WORDS.get(pos, "$$") not in pos_search:
+                if WEBSTER_WIKITONARY_MAP.get(pos, "$$") not in pos_search:
                     continue
             if query in w:
                 if " " not in w:
@@ -90,11 +92,15 @@ class WFSolver(commands.Cog):
                         pos: ds
                     }
                 elif "; " in w:
-                    a, b = w.split("; ")
+                    a = w.split("; ")
+                    necessary = ""
+                    for word in a:
+                        if query in word:
+                            necessary = word
                     if w in potential:
-                        potential[a if query in a else b][pos] = ds
-                        potential[a if query in a else b]["allpos"].append(pos)
-                    potential[a if query in a else b] = {
+                        potential[necessary][pos] = ds
+                        potential[necessary]["allpos"].append(pos)
+                    potential[necessary] = {
                         "allpos": [pos, ],
                         pos: ds
                     }
@@ -106,32 +112,19 @@ class WFSolver(commands.Cog):
         index_length = len(str(len(potential)))
         if index_length < 5:
             index_length = 10
+        print(potential)
         word_length = max([len(str(k)) for k in potential.keys()])
-        print(sorted(potential.keys(), key=lambda x: len(x), reverse=True))
         if word_length < 4:
             word_length = 9
         pos_length = max([len(str(", ".join(v["allpos"]))) for v in potential.values()])
         if pos_length < 14:
             pos_length = 19
         # Python moment
-        message = eval(
-            "f\"" +
-            "```| {'INDEX':il} | {'WORD':wl} | {'PART OF SPEECH':pl} |\\n\""
-            .replace("il", str(index_length))
-            .replace("wl", str(word_length))
-            .replace("pl", str(pos_length))
-        )
+        message = f"```| {'INDEX':{index_length}} | {'WORD':{word_length}} | {'PART OF SPEECH':{pos_length}} |\n"
         message += "="*(len(message)-4) + "\n"
         for i, (w, d) in enumerate(potential.items()):
             ap = ", ".join([WEBSTER_WIKITONARY_MAP[p] for p in d['allpos']])
-            tmpmsg = eval(
-                "f\"" +
-                "| {str(i):$$il} | {w:$$wl} | {ap:$$pl} |\\n\""
-                .replace("$$il", str(index_length))
-                .replace("$$wl", str(word_length))
-                .replace("$$pl", str(pos_length))
-                .replace("str(i)", str(i+1))
-            )
+            tmpmsg = f"| {i+1:{index_length}} | {w:{word_length}} | {ap:{pos_length}} |\n"
             if len(message + tmpmsg) >= 2000:
                 message += "```"
                 await interaction.channel.send(message)
