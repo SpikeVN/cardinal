@@ -35,6 +35,16 @@ WEBSTER_WIKITONARY_MAP = {
 
 environment = Environment(loader=FileSystemLoader("./templates"), autoescape=True, enable_async=True)
 template = environment.get_template("wf_lookup.html")
+
+if not os.path.exists(os.path.join("resources", "wfsolver")):
+    os.mkdir(os.path.join("resources", "wfsolver"))
+    with open(os.path.join("resources", "wfsolver", "dictionary.json"), "w", encoding="utf8") as f:
+        f.write(
+            json.dumps(
+                requests.get("https://github.com/ssvivian/WebstersDictionary/raw/master/dictionary.json").json()
+            )
+        )
+
 with open(os.path.join("resources", "wfsolver", "dictionary.json"), "r", encoding="utf8") as f:
     tmp = json.load(f)
     WORDS = {}
@@ -132,12 +142,4 @@ class WFSolver(commands.Cog):
 
 
 def setup(bot):
-    if not os.path.exists(os.path.join("resources", "wfsolver")):
-        os.mkdir(os.path.join("resources", "wfsolver"))
-        with open(os.path.join("resources", "wfsolver", "dictionary.json"), "w", encoding="utf8") as f:
-            f.write(
-                json.dumps(
-                    requests.get("https://github.com/ssvivian/WebstersDictionary/raw/master/dictionary.json").json()
-                )
-            )
     bot.add_cog(WFSolver(bot))
