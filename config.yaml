@@ -43,6 +43,9 @@ config:
       # votes (excluding votes from bots) is greater or equals
       # this number.
       threshold: 3
+    music:
+      # The maximum number of songs to search for each query.
+      max-search: 5
 
 
   # The bot backend

@@ -1,0 +1,7 @@
+disnake[voice]
+orjson
+wiktionaryparser
+pyrebase4
+pyyaml
+youtube-search
+git+https://github.com/ytdl-org/youtube-dl@master

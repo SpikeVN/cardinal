@@ -50,15 +50,15 @@ class Moderation(commands.Cog):
         s_user = database.User(admin)
         await invoking_interaction.send(
             security.safe_format(
-                i18n.localized(
+                i18n.translated_string(
                     f"commands.{action_type}.actionPrompt.public", s_user.locale
                 ),
-                admin=i18n.localized("boilerplate.anonymous", s_user.locale)
+                admin=i18n.translated_string("boilerplate.anonymous", s_user.locale)
                 if anonymous
                 else admin.mention,
                 user=user.mention,
                 duration=f"<t:{end_time if end_time is not None else ''}:R>",
-                reason=i18n.localized("boilerplate.noReason", s_user.locale)
+                reason=i18n.translated_string("boilerplate.noReason", s_user.locale)
                 if reason is None or reason == ""
                 else reason,
             ),
@@ -67,15 +67,15 @@ class Moderation(commands.Cog):
         if s_user.accept_direct_message:
             await user.send(
                 security.safe_format(
-                    i18n.localized(
+                    i18n.translated_string(
                         f"commands.{action_type}.actionPrompt.private", s_user.locale
                     ),
-                    admin=i18n.localized("boilerplate.anonymous", s_user.locale)
+                    admin=i18n.translated_string("boilerplate.anonymous", s_user.locale)
                     if anonymous
                     else admin.mention,
                     user=user.mention,
                     duration=f"<t:{end_time if end_time is not None else ''}:R>",
-                    reason=i18n.localized("boilerplate.noReason", s_user.locale)
+                    reason=i18n.translated_string("boilerplate.noReason", s_user.locale)
                     if reason is None or reason == ""
                     else reason,
                 )
@@ -239,10 +239,12 @@ class Moderation(commands.Cog):
             loc = database.User(interaction.author).locale
             await interaction.response.send_message(
                 security.safe_format(
-                    i18n.localized("boilerplate.invalidArgument", loc),
+                    i18n.translated_string("boilerplate.invalidArgument", loc),
                     arg_name="duration",
                     inp=duration,
-                    arg_type=i18n.localized("boilerplate.argumentType.timeStr", loc),
+                    arg_type=i18n.translated_string(
+                        "boilerplate.argumentType.timeStr", loc
+                    ),
                 ),
                 ephemeral=True,
             )

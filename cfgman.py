@@ -19,12 +19,15 @@ import yaml
 
 import logger
 
-CONFIG_HIVE: dict
+CONFIG_HIVE: dict = {}
 
 
 def init_config_hive():
     """Initialize the RAM config storage."""
-    with open("config.yaml", "r") as f:
+    config_dir = "config.yaml"
+    if os.path.exists(os.path.join("resources", "config.yaml")):
+        config_dir = os.path.join("resources", "config.yaml")
+    with open(config_dir, "r") as f:
         global CONFIG_HIVE
         CONFIG_HIVE = yaml.safe_load(f.read())
 
@@ -37,6 +40,8 @@ def get(_i: str) -> any:
     :param _i: the configuration location identifier.
     :return: its value.
     """
+    if CONFIG_HIVE == {}:
+        init_config_hive()
     if _i in os.environ:
         if (
             "password" in _i

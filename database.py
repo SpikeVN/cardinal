@@ -122,7 +122,7 @@ class User:
     @property
     def locale(self) -> i18n.Locale:
         try:
-            return i18n.from_identifier(
+            return i18n.get_locale(
                 DATABASE.child("users").child(self.user.id).child("locale").get().val()
             )
         except KeyError:
@@ -134,14 +134,15 @@ class User:
             )
 
     @locale.setter
-    def locale(self, value: i18n.Locale | disnake.Locale | str):
-        DATABASE.child("users").child(self.user.id).child("locale").set(
-            value.value.identifier
-            if isinstance(value, i18n.Locale)
-            else value.value.replace("-", "_")
-            if isinstance(value, enum.Enum)
-            else value
-        )
+    def locale(self, value: i18n.LocaleType):
+        if isinstance(value, disnake.Locale):
+            DATABASE.child("users").child(self.user.id).child("locale").set(
+                str(value).replace("-", "_")
+            )
+        else:
+            DATABASE.child("users").child(self.user.id).child("locale").set(
+                value.value.identifier
+            )
 
     @property
     def accept_direct_message(self) -> bool:

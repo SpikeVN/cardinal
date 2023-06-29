@@ -21,12 +21,14 @@ Apes localization engine.
 import json
 import os
 import random
+import typing
 
 import logger
 from .abc import *
 from .checker import check_structure
 
 LOCALIZATION_DATA: dict[Locale, dict[str, dict]] = {}
+LocaleType = Locale | disnake.Locale
 
 
 def init_translation_database():
@@ -35,19 +37,20 @@ def init_translation_database():
     for lan in os.listdir("i18n/translations"):
         if lan.endswith(".json"):
             with open(f"i18n/translations/{lan}", "r", encoding="utf8") as f:
-                LOCALIZATION_DATA[from_identifier(lan[:-5])] = json.loads(f.read())
+                LOCALIZATION_DATA[get_locale(lan[:-5])] = json.loads(f.read())
                 logger.debug(f"Loaded language {lan[:-5]} from {lan}")
     logger.success("Localization initialization successful.")
 
 
-def localized(_i: str, locale: Locale) -> str:
+def translated_string(_i: str, locale: LocaleType) -> str:
     path = _i.split(".")
-    a = LOCALIZATION_DATA[locale].copy()
+    loc = locale if isinstance(locale, Locale) else abc.get_locale(locale)
+    a = LOCALIZATION_DATA[loc].copy()
     for i in path:
         a = a[i]
     if isinstance(a, list):
         return random.choice(a)
-    return a
+    return a  # type: ignore
 
 
 def localized_command_description(cmd: str) -> disnake.Localized:

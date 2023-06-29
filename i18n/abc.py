@@ -38,9 +38,9 @@ class Locale(enum.Enum):
     )
 
 
-def from_identifier(_i: str):
+def get_locale(_i: str | disnake.Locale):
     for i in Locale:
-        if i.value.identifier == _i:
+        if i.value.identifier == str(_i):
             return i
     else:
         raise KeyError(f"Locale with identifier '{_i}' not found.")

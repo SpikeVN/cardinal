@@ -59,7 +59,7 @@ class AIChatChannel:
                 },
                 "stream": True,
                 "options": {"use_cache": False},
-            }
+            },
         ) as r:
             r: aiohttp.ClientResponse
             if r.status != 200:
@@ -96,7 +96,6 @@ class AIChatManager:
         logger.debug("Connected!")
 
     async def get_chat(self, cid: int = None) -> AIChatChannel:
-
         if self.chats.get(cid) is None:
             logger.debug("Creating new channel...")
             self.chats[cid] = await self.new_chat()

@@ -62,8 +62,8 @@ def start():
     logger.info("Loading modules...")
     load_modules()
     logger.debug("Testing localization...")
-    logger.debug(i18n.localized("test", i18n.Locale.VIETNAMESE))
-    logger.debug(i18n.localized("test", i18n.Locale.ENGLISH))
+    logger.debug(i18n.translated_string("test", i18n.Locale.VIETNAMESE))
+    logger.debug(i18n.translated_string("test", i18n.Locale.ENGLISH))
     logger.info("Starting bot...")
     bot.run(cfgman.get("general.token"))
 

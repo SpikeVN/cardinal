@@ -9,6 +9,13 @@
       "bool": "lựa chọn đúng/sai",
       "timeStr": "văn bản biểu thị thời gian"
     },
+    "levels": {
+      "info": "thông tin",
+      "success": "thành công",
+      "warning": "cảnh báo",
+      "error": "lỗi",
+      "severe": "hỏng"
+    },
     "anonymous": "ẩn danh",
     "noReason": "không gì cả",
     "success": [
@@ -203,6 +210,7 @@
         "answer": "Trả lời"
       },
       "stopGeneration": "Dừng trả lời",
+      "noEthics": "Nhân tâm của AI đã bị tắt. Tác giả của bot hoàn toàn không chịu trách nhiệm về nội dung của AI.",
       "error": {
         "noResponse": "Lỗi: OpenAI không trả lời yêu cầu của bạn. Đây là không phải là lỗi của bot. Bạn có thể thử lại sau.",
         "outputCut": "[dừng trả lời]"
@@ -234,6 +242,52 @@
         "resultTitle": "Kết quả tìm kiếm",
         "research": "Tìm hiểu sâu hơn"
       }
+    },
+    "music_play": {
+      "commandDescription": "Tìm kiếm bài nhạc trên YouTube, rồi bật nó trong kênh thoại.",
+      "argumentDescription": {
+        "query_or_url": "Từ khóa tìm kiếm hoặc URL video"
+      }
+    },
+    "music_pause": {
+      "commandDescription": "Tạm dừng bài nhạc đang chơi."
+    },
+    "music_stop": {
+      "commandDescription": "Dừng bài nhạc đang chơi và rời khỏi kênh thoại."
+    },
+    "music_skip": {
+      "commandDescription": "Bỏ qua bài nhạc hiện tại. Nếu hàng chờ không còn bài hát nào thì rời khỏi kênh thoại."
+    },
+    "music_list": {
+      "commandDescription": "Liệt kê những bài hát trong hàng chờ."
+    },
+    "music_status": {
+      "commandDescription": "Trả lại thời gian bài hát đã chạy."
+    },
+    "music": {
+      "chooserPlaceholder": "Hãy chọn một bài hát.",
+      "actions": {
+        "nowPlaying": "Đang chơi:",
+        "addedQueue": "Đã thêm vào hàng chờ:"
+      },
+      "playButton": "Chơi",
+      "card": {
+        "likeDislike": "Thích / Không thích",
+        "channel": "Kênh",
+        "duration": "Thời lượng",
+        "views": "Lượt xem",
+        "uploadDate": "Ngày đăng",
+        "requestedTemplate": "Yêu cầu bởi {name}"
+      },
+      "error": {
+        "notInVoice": "Bạn đang không ở trong kênh thoại nào. Bạn phải tham gia một kênh thoại trước khi sử dụng câu lệnh này.",
+        "notPlaying": "Hiện không đang chơi bài hát nào."
+      },
+      "queueEndDisconnect": "Hàng chờ đã hết. Tôi sẽ ngắt kết nối khỏi kênh thoại.",
+      "disconnected": "OK. Tôi sẽ ngắt kết nối khỏi kênh thoại.",
+      "paused": "Đã tạm dừng.",
+      "resumed": "Đã tiếp tục.",
+      "status": "Bài hát đang chơi"
     }
   }
 }

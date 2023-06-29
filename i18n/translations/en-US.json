@@ -9,6 +9,13 @@
       "bool": "true/false",
       "timeStr": "time string"
     },
+    "levels": {
+      "info": "info",
+      "success": "success",
+      "warning": "warning",
+      "error": "error",
+      "severe": "severe"
+    },
     "anonymous": "anonymous",
     "noReason": "no reason",
     "success": [
@@ -203,6 +210,7 @@
         "answer": "Generated Output"
       },
       "stopGeneration": "Stop Generation",
+      "noEthics": "AI ethics disengaged. In no circumstances could the author of this bot be held liable for anything said by AI.",
       "error": {
         "noResponse": "An error has occurred: OpenAI did not respond to your request. I cannot answer your question at the moment. You can always try again later, though.",
         "outputCut": "[text generation halted]"
@@ -234,6 +242,52 @@
         "resultTitle": "Word hunting result",
         "research": "Investigate"
       }
+    },
+    "music_play": {
+      "commandDescription": "Looks up a song on YouTube and plays it.",
+      "argumentDescription": {
+        "query_or_url": "Your search query or video URL."
+      }
+    },
+    "music_pause": {
+      "commandDescription": "Pauses the currently playing song."
+    },
+    "music_stop": {
+      "commandDescription": "Stops the currently playing song and leaves the voice channel."
+    },
+    "music_skip": {
+      "commandDescription": "Skips the currently playing song. If the queue has ended, leaves the voice channel."
+    },
+    "music_list": {
+      "commandDescription": "Lists the songs currently in the queue."
+    },
+    "music_status": {
+      "commandDescription": "Returns the song playback's progress."
+    },
+    "music": {
+      "chooserPlaceholder": "Please choose a song.",
+      "actions": {
+        "nowPlaying": "Ok. Now playing:",
+        "addedQueue": "Ok. Added to queue:"
+      },
+      "playButton": "Play",
+      "card": {
+        "likeDislike": "Likes / Dislikes",
+        "channel": "Channel",
+        "duration": "Duration",
+        "views": "Views",
+        "uploadDate": "Upload Date",
+        "requestedTemplate": "Requested by {name}"
+      },
+      "error": {
+        "notInVoice": "You are not in a voice channel. Join one first before using this command.",
+        "notPlaying": "I am currently not playing anything in your channel."
+      },
+      "queueEndDisconnect": "The queue has ended. Disconnecting.",
+      "disconnected": "Playback stopped.",
+      "paused": "Playback paused.",
+      "resumed": "Playback resumed.",
+      "status": "Playback Status"
     }
   }
 }

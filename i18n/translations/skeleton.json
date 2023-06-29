@@ -9,6 +9,13 @@
       "bool": "boolean type",
       "timeStr": "time string"
     },
+    "levels": {
+      "info": "info",
+      "success": "success",
+      "warning": "warning",
+      "error": "error",
+      "severe": "severe"
+    },
     "anonymous": "anonymous user",
     "noReason": "without any reason",
     "success": [
@@ -158,8 +165,9 @@
         "answer": "text indicating the information below it is the AI answer"
       },
       "stopGeneration": "text on the stop generating button",
+      "noEthics": "prompt to let the user know that ethics is disabled.",
       "error": {
-        "noResponse": "error when OpenAI server didnt response to bot request",
+        "noResponse": "error when OpenAI server didn't response to bot request",
         "outputCut": "when the AI output is cut in the middle by the stop button"
       }
     },
@@ -189,6 +197,52 @@
         "resultTitle": "lookup board result",
         "research": "research further"
       }
+    },
+    "music_play": {
+      "commandDescription": "localized description of the /music play command.",
+      "argumentDescription": {
+        "query_or_url": "localized argument description"
+      }
+    },
+    "music_pause": {
+      "commandDescription": "localized description of the /music pause command."
+    },
+    "music_stop": {
+      "commandDescription": "localized description of the /music stop command."
+    },
+    "music_skip": {
+      "commandDescription": "localized description of the /music skip command."
+    },
+    "music_list": {
+      "commandDescription": "localized description of the /music list command."
+    },
+    "music_status": {
+      "commandDescription": "localized description of the /music status command."
+    },
+    "music": {
+      "chooserPlaceholder": "text to show when no song was chosen",
+      "actions": {
+        "nowPlaying": "text indicating that the song is now playing",
+        "addedQueue": "text indicating that the song was added to queue"
+      },
+      "playButton": "play button label",
+      "card": {
+        "likeDislike": "Likes / Dislikes",
+        "channel": "Channel",
+        "duration": "Duration",
+        "views": "Views",
+        "uploadDate": "Upload Date",
+        "requestedTemplate": "Requested by {name}"
+      },
+      "error": {
+        "notInVoice": "user not in voice",
+        "notPlaying": "not playing anything in this channel"
+      },
+      "queueEndDisconnect": "disconnected by end of queue",
+      "disconnected": "disconnected by /music stop",
+      "paused": "playback paused",
+      "resumed": "playback resumed",
+      "status": "playback status"
     }
   }
 }
