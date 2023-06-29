@@ -57,6 +57,7 @@ class Music(commands.Cog):
             )
             return
         await interaction.response.defer()
+        await interaction.guild.change_voice_state(channel=interaction.author.voice.channel, self_deaf=True)
         if "youtube.com/watch?v=" in query_or_url or "youtu.be/" in query_or_url:
             url = query_or_url.replace("youtu.be/", "youtube.com/watch?v=")
             vid = await video_search.get(url)
