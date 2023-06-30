@@ -39,7 +39,8 @@
         "variate yes",
         "variate no"
       ]
-    ]
+    ],
+    "date": "%d/%m/%y"
   },
   "commands": {
     "ban": {

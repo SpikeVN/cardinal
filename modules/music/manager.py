@@ -15,6 +15,8 @@
 import disnake
 import typing
 
+from disnake.ext import commands
+
 import utils
 from .video_search import Song
 
@@ -56,6 +58,7 @@ def is_empty(channel: disnake.VoiceChannel):
 async def connect_to(channel: disnake.VoiceChannel) -> disnake.VoiceClient:
     if _STORAGE[channel.id]["client"] is None:
         connection = await channel.connect()
+        await channel.guild.change_voice_state(channel=channel, self_deaf=True)
         _STORAGE[channel.id]["client"] = connection
     return _STORAGE[channel.id]["client"]
 

@@ -62,17 +62,7 @@ def play_next(
             )
 
     if not manager.is_empty(client.channel):
-        asyncio.run_coroutine_threadsafe(
-            interaction.send(
-                i18n.translated_string("commands.music.actions.nowPlaying", interaction.locale),
-                embed=widgets.make_embed(
-                    manager.get_queue(client.channel)[0],
-                    interaction.author,
-                    interaction.locale,
-                ),
-            ),
-            loop,
-        )
+        asyncio.run_coroutine_threadsafe(widgets.show_playing(interaction), loop)
         client.play(
             disnake.FFmpegPCMAudio(
                 manager.get_queue(client.channel)[0].stream_url, **FFMPEG_OPTIONS

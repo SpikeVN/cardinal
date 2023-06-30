@@ -58,7 +58,8 @@
         "Được rồi",
         "Quay xe"
       ]
-    ]
+    ],
+    "date": "ngày %-d tháng %-m năm %Y"
   },
   "commands": {
     "ban": {

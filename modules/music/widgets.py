@@ -59,7 +59,7 @@ def make_embed(
     logger.info(song.upload_date)
     output.add_field(
         i18n.translated_string("commands.music.card.uploadDate", locale),
-        song.upload_date.strftime("%d/%m/%y"),
+        song.upload_date.strftime(i18n.translated_string("boilerplate.date", locale)),
     )
     if author.avatar is not None:
         output.set_footer(
@@ -139,3 +139,14 @@ class SongPlayButton(disnake.ui.Button):
                 ),
                 view=None,
             )
+
+
+async def show_playing(interaction: disnake.Interaction):
+    await interaction.send(
+        i18n.translated_string("commands.music.actions.nowPlaying", interaction.locale),
+        embed=make_embed(
+            manager.get_queue(interaction.author.voice.channel)[0],
+            interaction.author,
+            interaction.locale,
+        ),
+    )

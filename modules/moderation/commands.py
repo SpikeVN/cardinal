@@ -109,7 +109,6 @@ class Moderation(commands.Cog):
             default=None,
             description=i18n.localized_argument_description("ban", "reason"),
         ),
-        # TODO - Localized True/False boolean chooser
         quiet: bool = commands.Param(
             default=False,
             description=i18n.localized_argument_description("ban", "quiet"),

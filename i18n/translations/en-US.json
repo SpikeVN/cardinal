@@ -58,7 +58,8 @@
         "Yeah",
         "Nope"
       ]
-    ]
+    ],
+    "date": "%-d %B %Y"
   },
   "commands": {
     "ban": {
